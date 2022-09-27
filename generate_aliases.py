@@ -37,25 +37,29 @@ def main():
         ('ak', 'apply -k', None, ['sys']),
         ('k', 'kustomize', None, ['sys']),
         ('ex', 'exec -i -t', None, None),
-        ('lo', 'logs -f', None, None),
-        ('lop', 'logs -f -p', None, None),
+        ('lo', 'logs', None, None),
+        ('lof', 'logs -f', None, None),
+        ('lop', 'logs -p', None, None),
+        ('lopf', 'logs -f -p', None, None),
         ('p', 'proxy', None, ['sys']),
         ('pf', 'port-forward', None, ['sys']),
         ('g', 'get', None, None),
         ('d', 'describe', None, None),
         ('rm', 'delete', None, None),
+        ('ed', 'edit', None, None),
         ('run', 'run --rm --restart=Never --image-pull-policy=IfNotPresent -i -t', None, None),
         ]
 
     res = [
-        ('po', 'pods', ['g', 'd', 'rm'], None),
-        ('dep', 'deployment', ['g', 'd', 'rm'], None),
-        ('svc', 'service', ['g', 'd', 'rm'], None),
-        ('ing', 'ingress', ['g', 'd', 'rm'], None),
-        ('cm', 'configmap', ['g', 'd', 'rm'], None),
-        ('sec', 'secret', ['g', 'd', 'rm'], None),
+        ('po', 'pods', ['g', 'd', 'rm', 'ed'], None),
+        ('dep', 'deployment', ['g', 'd', 'rm', 'ed'], None),
+        ('svc', 'service', ['g', 'd', 'rm', 'ed'], None),
+        ('ing', 'ingress', ['g', 'd', 'rm', 'ed'], None),
+        ('cm', 'configmap', ['g', 'd', 'rm', 'ed'], None),
+        ('sec', 'secret', ['g', 'd', 'rm', 'ed'], None),
+        ('ds', 'daemonsets', ['g', 'd', 'rm', 'ed'], None),
         ('no', 'nodes', ['g', 'd'], ['sys']),
-        ('ns', 'namespaces', ['g', 'd', 'rm'], ['sys']),
+        ('ns', 'namespaces', ['g', 'd', 'rm', 'ed'], ['sys']),
         ]
     res_types = [r[0] for r in res]
 
